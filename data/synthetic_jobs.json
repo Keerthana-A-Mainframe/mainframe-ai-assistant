@@ -1,0 +1,76 @@
+{
+  "abend_codes": {
+    "S806": "Program not found in load library",
+    "S0C7": "Data exception -- likely bad numeric data in COMP-3 field",
+    "S0C4": "Protection exception -- invalid memory reference",
+    "S013": "Open error -- dataset issue (missing DD, wrong DSN)",
+    "S222": "Job was cancelled by operator or user"
+  },
+
+  "jobs": [
+    {
+      "job_id": "PAYJOB01",
+      "status": "ABEND",
+      "retcode": "S0C7",
+      "step": "STEP020",
+      "program": "PAYCALC",
+      "log_snippet": "IEC141I DATA EXCEPTION AT OFFSET +00A2 IN PAYCALC, FIELD EMP-SALARY CONTAINS NON-NUMERIC DATA"
+    },
+    {
+      "job_id": "PAYJOB02",
+      "status": "ABEND",
+      "retcode": "S806",
+      "step": "STEP010",
+      "program": "PAYRPT",
+      "log_snippet": "IEW2278E MODULE PAYRPT NOT FOUND IN LOAD LIBRARY SYS1.LOADLIB"
+    },
+    {
+      "job_id": "DEPTJOB01",
+      "status": "ABEND",
+      "retcode": "S013",
+      "step": "STEP005",
+      "program": "DEPTPAY",
+      "log_snippet": "IEC030I DD STATEMENT MISSING FOR DDNAME DEPTFILE, OPEN FAILED"
+    },
+    {
+      "job_id": "DEPTJOB02",
+      "status": "ABEND",
+      "retcode": "S0C4",
+      "step": "STEP015",
+      "program": "DEPTCALC",
+      "log_snippet": "IEC141I PROTECTION EXCEPTION AT OFFSET +0158 IN DEPTCALC, INVALID STORAGE REFERENCE"
+    },
+    {
+      "job_id": "NUMJOB01",
+      "status": "ABEND",
+      "retcode": "S222",
+      "step": "STEP001",
+      "program": "NUMBERS",
+      "log_snippet": "JOB CANCELLED BY OPERATOR REQUEST -- MANUAL INTERVENTION"
+    },
+    {
+      "job_id": "NUMJOB02",
+      "status": "COMPLETED",
+      "retcode": "0000",
+      "step": "STEP001",
+      "program": "NUMBERS",
+      "log_snippet": "JOB COMPLETED SUCCESSFULLY -- RC=0000"
+    },
+    {
+      "job_id": "PAYJOB03",
+      "status": "ABEND",
+      "retcode": "S0C7",
+      "step": "STEP030",
+      "program": "PAYCALC",
+      "log_snippet": "IEC141I DATA EXCEPTION AT OFFSET +00F1 IN PAYCALC, FIELD HOURS-WORKED CONTAINS SPACES"
+    },
+    {
+      "job_id": "UNKNOWNJOB99",
+      "status": "ABEND",
+      "retcode": "SXXX",
+      "step": "STEP001",
+      "program": "MYSTERY",
+      "log_snippet": "UNRECOGNIZED SYSTEM COMPLETION CODE -- CHECK VENDOR DOCUMENTATION"
+    }
+  ]
+}
